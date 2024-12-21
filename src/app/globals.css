@@ -90,15 +90,25 @@ body {
 .tiptap {
 
   /* Image specific styling */
-   img {
+  img {
     display: block;
     height: auto;
     margin: 1.5rem 0;
     max-width: 100%;
+    border-radius: var(--radius); /* Adds rounded corners to images */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for focus */
 
+    /* Styling for selected images */
     &.ProseMirror-selectednode {
-      outline: 3px solid var(--purple);
+      outline: 3px solid var(--primary);
     }
+  }
+
+  .image {
+    display: block;       /* Ensures the image behaves as a block-level element */
+    resize: both;         /* Allows the image to be resized both horizontally and vertically */
+    overflow: auto;       /* Ensures the image overflows properly when resized */
+    max-width: 100%;      /* Optional: Ensure the image scales responsively */
   }
 
    /* Table-specific styling */
