@@ -1,3 +1,5 @@
+https://github.com/ZakharTeshukov/docs-tutorial/blob/e4909dc737bdb61cb50f2e7ce6d3b7d8b280d290/src/app/documents/%5BdocumentId%5D/editor.tsx
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
