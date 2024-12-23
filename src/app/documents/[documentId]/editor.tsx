@@ -9,15 +9,41 @@ import Table from "@tiptap/extension-table";
 import TableCell from "@tiptap/extension-table-cell";
 import TableHeader from "@tiptap/extension-table-header";
 import TableRow from "@tiptap/extension-table-row";
-import { useEditor, EditorContent } from "@tiptap/react";
+import Superscript from '@tiptap/extension-superscript'
+import Subscript from '@tiptap/extension-subscript'
+import Highlight from '@tiptap/extension-highlight'
+import ListItem from '@tiptap/extension-list-item'
+import ListKeymap from '@tiptap/extension-list-keymap'
 
+import { useEditor, EditorContent } from "@tiptap/react";
 import { useEditorStore } from "@/store/use-editor-store";
+import { Underline } from '@tiptap/extension-underline';
 
 export const Editor = () => {
   const { setEditor } = useEditorStore();
 
   const editor = useEditor({
     onCreate({ editor }) {
+      setEditor(editor);
+    },
+    onDestroy() {
+      setEditor(null);
+    },
+    onUpdate({ editor }) {
+      setEditor(editor);
+    },
+    onSelectionUpdate({ editor }) {
+      setEditor(editor);
+    },     onTransaction({ editor }) {
+      setEditor(editor);
+    },
+    onFocus({ editor }) {
+      setEditor(editor);
+    },
+    onBlur({ editor }) {
+      setEditor(editor);
+    },
+    onContentError({ editor }) {
       setEditor(editor);
     },
 
@@ -47,6 +73,12 @@ export const Editor = () => {
       TableCell,
       TableHeader,
       TableRow,
+      Underline,
+      Superscript,
+      Subscript,
+      Highlight,
+      ListItem,
+      ListKeymap,
     ],
     content: `
         <table>
@@ -63,9 +95,10 @@ export const Editor = () => {
             </tr>
           </tbody>
         </table>
-        
+
       <p>Insert an image below:</p>
       <img src="https://via.placeholder.com/150" alt="Placeholder" class="custom-image" />
+      <code>Hello</code>
       `,
   });
 

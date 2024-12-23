@@ -86,8 +86,14 @@ body {
     @apply bg-background text-foreground;
   }
 }
-
 .tiptap {
+  code {
+    background-color: var(--black);
+    border-radius: 0.4rem;
+    color: var(--black);
+    font-size: 0.85rem;
+    padding: 0.25em 0.3em;
+  }
 
   /* Image specific styling */
   img {
